@@ -6,9 +6,8 @@ public class Empleado extends Persona {
     private final int legajo;
     private String puesto;
 
-    
     public static int devuelveProximoLegajo() {
-    	return contadorLegajo + 1;
+		return contadorLegajo;
     }
    
     public Empleado() {
@@ -18,10 +17,10 @@ public class Empleado extends Persona {
     }
     
     public Empleado(String puesto, String Dni, String Nombre, String Apellido, int Edad, LocalDate FechaNacimiento,
-			        String Genero, String Direccion, String Telefono, String Email) {
-    	super(Dni, Nombre, Apellido, Edad, FechaNacimiento, Genero, Direccion, Telefono, Email);
-    	this.legajo = contadorLegajo++; 
-    	this.puesto = puesto;
+					String Genero, String Direccion, String Telefono, String Email) {
+		super(Dni, Nombre, Apellido, Edad, FechaNacimiento, Genero, Direccion, Telefono, Email);
+		this.legajo = contadorLegajo++; 
+		this.puesto = puesto;
     }
 
 	public String getPuesto() {
@@ -36,6 +35,6 @@ public class Empleado extends Persona {
 
 	@Override
 	public String toString() {
-		return super.toString() + " \n Legajo: " + legajo + " \n Puesto: " + puesto;
+		return super.toString() + " \n Legajo: " + legajo + " \n Puesto: " + puesto + "\n";
 	} 
 } 
