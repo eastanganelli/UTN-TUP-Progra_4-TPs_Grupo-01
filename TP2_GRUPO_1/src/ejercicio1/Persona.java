@@ -97,6 +97,25 @@ public class Persona {
 			this.email = email;
 		}
 		
+		//Metodos
+		
+		public static void exVerificarDNI(String dni) throws ExVerificarDNI {
+			//verifica que el DNI contenga exactamente 8 caracteres numéricos
+			if (dni.length() != 8) {
+		        throw new ExVerificarDNI();
+		    }
+
+		    //verificar que todos sean numeros
+		    if (!dni.matches("\\d{8}")) {
+		        throw new ExVerificarDNI();
+		    }
+
+		    //si pasa las validaciones
+		    System.out.println("DNI válido: " + dni);
+		}
+		
+		
+		
 		public String toString() {
 	        return "Persona: \n DNI: " + dni + "\n Nombre: " + nombre + "\n Apellido: " + apellido +
 	               "\n Edad: " + edad + "\n Fecha de Nacimiento: " + fechaNacimiento +
