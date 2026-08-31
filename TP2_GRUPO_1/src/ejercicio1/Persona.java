@@ -111,7 +111,7 @@ public class Persona {
 		    }
 
 		    //si pasa las validaciones
-		    System.out.println("DNI válido: " + dni);
+		    System.out.println("Persona agregada correctamente");
 		}
 		
 		
