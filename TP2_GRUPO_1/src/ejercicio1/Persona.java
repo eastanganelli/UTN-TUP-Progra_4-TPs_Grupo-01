@@ -1,6 +1,7 @@
 package ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Persona {
 	//Atributos
@@ -100,20 +101,27 @@ public class Persona {
 		//Metodos
 		
 		public static void exVerificarDNI(String dni) throws ExVerificarDNI {
-			//verifica que el DNI contenga exactamente 8 caracteres numéricos
-			if (dni.length() != 8) {
+
+		    if (dni == null || !dni.matches("\\d{8}")) {
 		        throw new ExVerificarDNI();
 		    }
-
-		    //verificar que todos sean numeros
-		    if (!dni.matches("\\d{8}")) {
-		        throw new ExVerificarDNI();
-		    }
-
-		    //si pasa las validaciones
-		    System.out.println("Persona agregada correctamente");
+		}		
+	
+		@Override
+		public int hashCode() {
+			return Objects.hash(dni);
 		}
-		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Persona other = (Persona) obj;
+			return Objects.equals(dni, other.dni);
+		}
 		
 		
 		public String toString() {
