@@ -1,6 +1,6 @@
 package ejercicio2;
 
-public abstract class Edificio {
+public abstract class Edificio{
     private String nombre;
     private double ancho;
     private double largo;
@@ -39,7 +39,14 @@ public abstract class Edificio {
 		this.largo = largo;
 	}
 	
+	//Metodos
 	public double getSuperficieEdificio() {
-	    return ancho * largo;
+		return ancho * largo;
 	}
+
+	@Override
+	public String toString() {
+		return "Edificio de nombre: " + nombre + ", ancho = " + ancho + "y largo = " + largo;
+	}
+	
 }
